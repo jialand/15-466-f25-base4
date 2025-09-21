@@ -1,4 +1,4 @@
-# Who Killed The Duck
+# The Mute Lift
 
 This is an assignment project for CMU 15466/15666 course.
 
@@ -10,7 +10,7 @@ This is an assignment project for CMU 15466/15666 course.
 
 #### Design:
 
-It's a small plot-heavy game. Players read, choose, and see what's going on with the story. I came up with a short tale and added some flavor to it.
+It's a small plot-heavy game. Players read, choose, and see what's going on with the story. The story is a piece from a bigger narrative I created.
 
 
 
@@ -42,7 +42,7 @@ Use keyboard Enter/Return to confirm the choice.
 
 #### Sources: 
 
-I mainly use GPT to help me understand the codebases and create the pipeline.
+GPT is used to help understand the codebases and create the pipeline.
 
 The font is from [Google Font](https://fonts.google.com/specimen/Delius?lang=en_Latn&categoryFilters=Feeling:%2FExpressive%2FCute).
 

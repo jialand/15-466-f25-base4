@@ -1,0 +1,131 @@
+start: intro
+
+state: intro
+text:
+<<<
+Who Killed The Duck?
+>>>
+option: Start -> start_game
+option: What else do you expect? -> start_game
+
+state: start_game
+text:
+<<<
+One day, the chicken was taking a walk as usual. 
+Suddenly, as it passed by the duck house, it noticed that the duck was gone. 
+On the ground, there were only a few feathers and a pool of blood. 
+The chicken was terrified and cried out loudly, summoning all the nearby animals.
+>>>
+option: Continue -> gathered
+
+state: gathered
+text:
+<<<
+All the animals in the farm gathered and began to analyze the scene.
+The chicken said, "This is terrible. Could something have happened to the duck?"
+The dog said, "The feathers smell like the duck’s. They really do belong to the duck."
+The bull said, "The duck was still here yesterday. Who could have murdered the duck?"
+The goose said, "Nobody except us was here since yesterday. It can only be one of us."
+Now, they must decide, who could have done such a cruel thing?
+>>>
+option: Accuse the chicken -> accuse_chicken
+option: Accuse the dog -> accuse_dog
+option: Accuse the bull -> accuse_bull
+option: Accuse the goose -> accuse_goose
+option: Accuse the duck -> accuse_duck
+
+state: accuse_chicken
+text:
+<<<
+It must be the chicken! It's said the murderer always goes back to the crime scene! And they trying to act like innocent by reporting it!
+>>>
+option: It's the chicken! -> chicken
+option: Or maybe it's not? -> gathered
+
+state: accuse_dog
+text:
+<<<
+The dog is the only carnivore here! Who else can it be except the dog? 
+>>>
+option: It's the dog! -> dog
+option: Or maybe it's not? -> gathered
+
+state: accuse_bull
+text:
+<<<
+The bull is the biggest buddy in the farm. It's so easy for it to trampled the duck to death --- and the scene just looked like this! Feathers and blood!
+>>>
+option: It's the bull! -> bull
+option: Or maybe it's not? -> gathered
+
+state: accuse_goose
+text:
+<<<
+The goose is the only one who compete with the duck! It murdered the duck so it can have the whole pond to itself! 
+>>>
+option: It's the goose! -> goose
+option: Or maybe it's not? -> gathered
+
+state: accuse_duck
+text:
+<<<
+The duck murdered itself? Uhhhhh, why would it commit suicide? Probably because the weather is getting to hot these days. Or it's just because you don't want to accuse against each other. You get to live here together after all. It's awkward you know? Then the duck it is.
+>>>
+option: It's the duck! -> duck
+option: Or maybe it's not? -> gathered
+
+state: chicken
+text:
+<<<
+You've decided the murderer to be the chicken. To avoid another death, you must report this to the human and make chicken into roast chicken. Though the duck probably is the only one here that the chicken have a chance to win in battle, the dog is looking forward to some treats no matter what.
+>>>
+option: Control that chicken! -> duck_returned
+
+state: dog
+text:
+<<<
+You've decided the murderer to be the dog. What a shame on you, dog! You are supposed to guard us, but you murdered the duck! You deserved to be punished! Report this to the human!
+>>>
+option: Control that dog! -> duck_returned
+
+state: bull
+text:
+<<<
+You've decided the murderer to be the bull. How can you do this to the duck? Bull! We all could have been the duck. But it's probably too expensive for the human to kill as it's the breeding cattle and is worth a LOT. So maybe lock it up in the bull pen.
+>>>
+option: Control that bull! ...? Maybe just let it be. -> duck_returned
+
+state: goose
+text:
+<<<
+You've decided the murderer to be the goose. What it took from the duck must be taken. Let the human sell the goose and buy ten ducks instead. This pond will belong to the ducks! Make the ducks great again!
+>>>
+option: Control that goose! -> duck_returned
+
+state: duck
+text:
+<<<
+You've decided the murderer to be the duck. Then probably that's it. Though most of you will leave an eye open when sleeping, that's the decision by people. We respect democracy.
+>>>
+option: Okay, fine. -> duck_returned
+
+state: duck_returned
+text:
+<<<
+As the animals are busying with the trial, an unexpected guest joined the party. Or, we should say, the victim returned to it's home. 
+>>>
+option: Wait, what? -> truth
+
+state: truth
+text:
+<<<
+Well, it turned out to be the duck just had a new girlfriend. It was about to go on a date today. So the duck caught a really big fish as a present to its love. Usually the duck just swallow the fish, but this time the fish was really big, and the duck don't want to spit of a slimy fish in front of its girlfriend. So the duck knocked out the fish, of course, after an intense fight and the lost of some feathers.
+>>>
+option: Ummmm. RIP the fish. -> the_end
+
+state: truth
+text:
+<<<
+THE END.
+>>>
+option: Return to the title screen. -> intro

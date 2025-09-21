@@ -1,131 +1,285 @@
-start: intro
+start: game_start
 
-state: intro
+state: game_start
 text:
 <<<
-Who Killed The Duck?
+The Mute Lift 
 >>>
-option: Start -> start_game
-option: What else do you expect? -> start_game
+option: Start -> intro1
+option: Skip the intro -> r1
 
-state: start_game
+state: intro1
 text:
 <<<
-One day, the chicken was taking a walk as usual. 
-Suddenly, as it passed by the duck house, it noticed that the duck was gone. 
-On the ground, there were only a few feathers and a pool of blood. 
-The chicken was terrified and cried out loudly, summoning all the nearby animals.
+Narrator: In the late 20xxs, a global trade war escalated into a devastating worldwide conflict.
+When the smoke cleared, nations were gone. Corporations and city-states rose in their place.
+The world fractured into “faultline cities” — divided by class, power, and resources.
 >>>
-option: Continue -> gathered
+option: Continue. -> intro2
 
-state: gathered
+state: intro2
 text:
 <<<
-All the animals in the farm gathered and began to analyze the scene.
-The chicken said, "This is terrible. Could something have happened to the duck?"
-The dog said, "The feathers smell like the duck’s. They really do belong to the duck."
-The bull said, "The duck was still here yesterday. Who could have murdered the duck?"
-The goose said, "Nobody except us was here since yesterday. It can only be one of us."
-Now, they must decide, who could have done such a cruel thing?
+Narrator: Starfall City is one such vertical metropolis.
+At the top lies Starim, ruled by corporations, gleaming with glass towers and purified air.
+At the bottom sprawls The Fall — a wasteland of scrap tech, gangs, black markets, and experiments gone wrong.
+Between them is Breakline, where fixers and smugglers profit from both sides.
 >>>
-option: Accuse the chicken -> accuse_chicken
-option: Accuse the dog -> accuse_dog
-option: Accuse the bull -> accuse_bull
-option: Accuse the goose -> accuse_goose
-option: Accuse the duck -> accuse_duck
+option: Continue. -> intro3
 
-state: accuse_chicken
+state: intro3
 text:
 <<<
-It must be the chicken! It's said the murderer always goes back to the crime scene! And they trying to act like innocent by reporting it!
+Narrator: Omnireach is the hub of everything that moves.
+Cargo, weapons, secrets — legal or not, everything flows through its ports.
+Pay the fee, and your goods are safe inside the city.
+Step outside, and you’d better hire mercenaries… or risk becoming prey for raiders.
 >>>
-option: It's the chicken! -> chicken
-option: Or maybe it's not? -> gathered
+option: Continue. -> intro4
 
-state: accuse_dog
+state: intro4
 text:
 <<<
-The dog is the only carnivore here! Who else can it be except the dog? 
+Narrator: In The Fall, District C, there is a bar called The Mute Lift.
+Old neon, a dusty stage, arcade machines — nothing unusual at first glance.
+But behind its facade lies a secret: it is a meeting point for the Duskrise Protocol.
 >>>
-option: It's the dog! -> dog
-option: Or maybe it's not? -> gathered
+option: Continue. -> intro5
 
-state: accuse_bull
+state: intro5
 text:
 <<<
-The bull is the biggest buddy in the farm. It's so easy for it to trampled the duck to death --- and the scene just looked like this! Feathers and blood!
+Narrator: The Duskrise were once engineers and scientists who helped build Starim.
+Cast out by the elites, they now plot revenge.
+Their plan: pierce the barriers between The Fall and Starim, unleash chaos, and ignite revolution.
+Their hidden elevator is the first breach — a path straight into the upper city.
 >>>
-option: It's the bull! -> bull
-option: Or maybe it's not? -> gathered
+option: Continue. -> intro6
 
-state: accuse_goose
+state: intro6
 text:
 <<<
-The goose is the only one who compete with the duck! It murdered the duck so it can have the whole pond to itself! 
->>>
-option: It's the goose! -> goose
-option: Or maybe it's not? -> gathered
+Narrator: You are Null Directive — a covert agent hired through Omnireach’s private network.
+Your mission: infiltrate The Mute Lift, secure an invitation to the Duskrise meeting,
+and uncover what’s coming next for Starfall City.
 
-state: accuse_duck
+To get the invitation, you have to talk to Raze - the leader of a brotherhood of The Fall. He has an invitation, but whether you can get him to give you that is another thing.
+>>>
+option: Talk to Raze. -> r1
+
+state: r1
 text:
 <<<
-The duck murdered itself? Uhhhhh, why would it commit suicide? Probably because the weather is getting to hot these days. Or it's just because you don't want to accuse against each other. You get to live here together after all. It's awkward you know? Then the duck it is.
+Raze: …What?
 >>>
-option: It's the duck! -> duck
-option: Or maybe it's not? -> gathered
+option: I'm here for the invitation. -> r2
+option: Doesn’t look like you’re in a hurry to drink that. -> r3
+option: You’re Raze. Ash Brotherhood. Heard your name before. -> r4
+option: Nothing much. Just sitting. -> r5
 
-state: chicken
+state: r2
 text:
 <<<
-You've decided the murderer to be the chicken. To avoid another death, you must report this to the human and make chicken into roast chicken. Though the duck probably is the only one here that the chicken have a chance to win in battle, the dog is looking forward to some treats no matter what.
+Raze: I don’t know what you’re talking about.
 >>>
-option: Control that chicken! -> duck_returned
+option: Don’t play dumb. You really want me to spell it out? The invitation—for the Duskrise Protocol meeting. -> r6
+option: Alright. Guess I was mistaken. My bad. Nevermind. -> r1
 
-state: dog
+state: r3
 text:
 <<<
-You've decided the murderer to be the dog. What a shame on you, dog! You are supposed to guard us, but you murdered the duck! You deserved to be punished! Report this to the human!
+Raze: “Just because a drink’s sitting in front of you doesn’t mean you should take it.
+Could be fine liquor. Could be poison.”
 >>>
-option: Control that dog! -> duck_returned
+option: True enough. This one smells like poison to me. -> r7
+option: Indeed. -> r1
 
-state: bull
+state: r4
 text:
 <<<
-You've decided the murderer to be the bull. How can you do this to the duck? Bull! We all could have been the duck. But it's probably too expensive for the human to kill as it's the breeding cattle and is worth a LOT. So maybe lock it up in the bull pen.
+Raze: Name gets around. Yours doesn’t.
 >>>
-option: Control that bull! ...? Maybe just let it be. -> duck_returned
+option: Name’s Null. Pleasure. -> r1
+option: You don’t need to know who I am. -> r8
+option: I’m not local. I’m with Omnireach. -> r9
 
-state: goose
+state: r5
 text:
 <<<
-You've decided the murderer to be the goose. What it took from the duck must be taken. Let the human sell the goose and buy ten ducks instead. This pond will belong to the ducks! Make the ducks great again!
+Raze: Whatever.
 >>>
-option: Control that goose! -> duck_returned
+option: Quit this mission. -> game_start
 
-state: duck
+
+state: r6
 text:
 <<<
-You've decided the murderer to be the duck. Then probably that's it. Though most of you will leave an eye open when sleeping, that's the decision by people. We respect democracy.
+Raze: Watch your tone. This ain’t your house.
 >>>
-option: Okay, fine. -> duck_returned
+option: [You failed the task.] -> game_start
 
-state: duck_returned
+state: r7
 text:
 <<<
-As the animals are busying with the trial, an unexpected guest joined the party. Or, we should say, the victim returned to it's home. 
+Raze: …So tell me — what do you think I should do with a glass of poison?
 >>>
-option: Wait, what? -> truth
+option: If you know it’s poison, then there's no point drinking it. -> r10
+option: Maybe it’s better to let someone else drink it. -> r11
 
-state: truth
+state: r8
 text:
 <<<
-Well, it turned out to be the duck just had a new girlfriend. It was about to go on a date today. So the duck caught a really big fish as a present to its love. Usually the duck just swallow the fish, but this time the fish was really big, and the duck don't want to spit of a slimy fish in front of its girlfriend. So the duck knocked out the fish, of course, after an intense fight and the lost of some feathers.
+Raze: And I don’t need to talk to you either.
 >>>
-option: Ummmm. RIP the fish. -> the_end
+option: [You failed the task.] -> game_start
 
-state: truth
+state: r9
+text:
+<<<
+Raze: [raises an eyebrow] Omnireach? You’re fast. What, the reputation of our little tea party upstairs get this high these days?
+>>>
+option: Of course. We’re professionals when it comes to this sort of thing. -> r19
+option: In Omnireach, you might call it a reputation. Down here in the Fall… let’s be honest — infamy fits better. -> r20
+
+state: r10
+text:
+<<<
+Raze: “When a drink’s been poured, it’s rude to just toss it out.
+If you’re bored, go grab your own glass.
+Stop staring at mine.”
+>>>
+option: [You failed the task.] -> game_start
+
+state: r11
+text:
+<<<
+Raze: Funny. You know it’s poison, and you expect someone else to take the hit?
+>>>
+option: And how would they know it’s poison? -> r12
+option: One man's poison is another man's meat. -> r13
+
+state: r12
+text:
+<<<
+Raze: [shakes head] …Help the kind, and I bury them. Help the mad, and I burn the street.
+>>>
+option: [You failed the task.] -> game_start
+
+state: r13
+text:
+<<<
+Raze: Makes you wonder… who’d taste poison and call it meat.
+>>>
+option: Closer than you think. -> r14
+
+state: r14
+text:
+<<<
+Raze: [eyes you up] Where’d you come from… that you can stomach a drink like this?
+>>>
+option: Starim. -> r15
+option: The Fall. -> r16
+option: Omnireach. -> r17
+
+state: r15
+text:
+<<<
+Raze: [scoffs] Oh, a Starim noble playing lost in the Fall? Cute. But when did prey ever volunteer to guide the predator?
+>>>
+option: [You failed the task.] -> game_start
+
+state: r16
+text:
+<<<
+Raze: A calf who thinks they can take a bite out of a tiger — either an idiot, or a nut. Neither I’d bother.
+>>>
+option: [You failed the task.] -> game_start
+
+state: r17
+text:
+<<<
+Raze: [eyes narrowing] Hmph. Didn’t take long for the hyenas to catch the scent of blood.
+>>>
+option: We’re professional hunters, after all. -> r18
+
+state: r18
+text:
+<<<
+Raze: Haha, alright then. Hope this piece of meat doesn’t choke you on the way down.
+>>>
+option: [Congrats! You got the invitation!] -> end
+
+state: r19
+text:
+<<<
+Raze: Professionals know the rule. You want something, you pay for it. I don’t run a charity.
+>>>
+option: Mmm… bit tight on funds lately. On credit? -> r21
+option: Money is not the only form of payment. -> r22
+
+state: r20
+text:
+<<<
+Raze: Oh? If you know so much, then tell me — how is a chance for the people down here to finally rise up something infamous to the Fall?
+>>>
+option: Well, since you’re playing this game, I’ll play my part. -> r25
+
+state: r21
+text:
+<<<
+Raze: Deal’s off. Door’s that way.
+>>>
+option: [You failed the task.] -> game_start
+
+state: r22
+text:
+<<<
+Raze: If not money, then what?
+>>>
+option: Take a problem off your hands — sounds like a fair trade to me. -> r23
+
+state: r23
+text:
+<<<
+Raze: Aha! A grand feast like this. The turning point of the Fall’s destiny. How could that possibly be a problem?
+>>>
+option: If it weren’t a problem, you’d already be up there. But here you are — drinking alone and burning time. -> r24
+
+state: r24
+text:
+<<<
+Raze: [stares in silence; something in his eyes shifts, heavy as the city above.]
+>>>
+option: Continue. -> r25
+
+state: r25
+text:
+<<<
+Null: You already know.
+Those self-serving egos dressed up as revolutionaries…
+They don’t care about the people down here.
+They don’t care about you. Or your brothers. Or your families.
+
+Very soon, the Fall will call you a traitor for not showing up.
+And if you do show up, but refuse to bleed for their so-called uprising —
+you’ll be even more of one.
+
+So maybe… it’s better if your ticket just happened to get stolen.
+Makes the future a little easier to live with.
+>>>
+option: Continue. -> r26
+
+state: r26
+text:
+<<<
+Raze: …Funny thing. The ticket just happened to slip out of my pocket.
+Pure accident.
+>>>
+option: [Congrats! You got the invitation!] -> end
+
+state: end
 text:
 <<<
 THE END.
 >>>
-option: Return to the title screen. -> intro
+option: Restart -> game_start
