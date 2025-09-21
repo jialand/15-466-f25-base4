@@ -34,6 +34,8 @@ This game use `\dist\dialogues.txt` to store all the choices and narratives. All
 
 #### How To Play:
 
+[If you encountered compile error due to C4819, try run `set CL=/utf-8` to set to UTF-8]
+
 Use keyboard Up and Down to switch between choices.
 
 Use keyboard Enter/Return to confirm the choice.
