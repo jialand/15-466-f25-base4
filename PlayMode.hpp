@@ -2,6 +2,8 @@
 
 #include "Scene.hpp"
 #include "Sound.hpp"
+#include "TextHB.hpp"
+#include "Dialogue.hpp"
 
 #include <glm/glm.hpp>
 
@@ -44,6 +46,17 @@ struct PlayMode : Mode {
 
 	//car honk sound:
 	std::shared_ptr< Sound::PlayingSample > honk_oneshot;
+
+	std::unique_ptr<TextHB> text;
+	// Dialogue runtime:
+    DialogueGraph dialog;
+    std::string cur_state;   // current node id
+    int selected = 0;        // highlighted option index
+    bool finished = false;   // reached END
+
+    // Helpers:
+    void move_selection(int delta);
+    void confirm_selection();
 	
 	//camera:
 	Scene::Camera *camera = nullptr;

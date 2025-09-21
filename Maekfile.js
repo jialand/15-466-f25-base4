@@ -156,7 +156,9 @@ const game_names = [
 	//maek.CPP('ColorTextureProgram.cpp'),  //not used right now, but you might want it
 	maek.CPP('Sound.cpp'),
 	maek.CPP('load_wav.cpp'),
-	maek.CPP('load_opus.cpp')
+	maek.CPP('load_opus.cpp'),
+	maek.CPP('TextHB.cpp'),
+	maek.CPP('Dialogue.cpp')
 ];
 
 const common_names = [
